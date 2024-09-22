@@ -42,7 +42,6 @@ api.interceptors.response.use(
 
 export const isAdmin = (token: string) => {
   let decoded: any = jwtDecode(token);
-  console.log({ decoded });
   return decoded === UserRole.ADMIN;
 };
 
