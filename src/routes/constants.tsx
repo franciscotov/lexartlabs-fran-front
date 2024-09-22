@@ -1,5 +1,4 @@
-import SignUp from "@/app/signup/page";
-
+import SignUp from "../pages/signup";
 import { paths } from "./paths";
 
 export const ROUTES = [
@@ -11,11 +10,13 @@ export const ROUTES = [
   {
     exact: false,
     path: paths.login,
-    element: <SignUp />,
+    element: <>hola</>,
+    // element: <SignUp />,
   },
   {
     exact: false,
     path: paths.signup,
-    element: <SignUp />,
+    element: <>hola</>,
+    // element: <SignUp />,
   },
 ];

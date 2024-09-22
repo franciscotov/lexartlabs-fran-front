@@ -1,6 +1,6 @@
-import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 
-import { ROUTES } from './constants';
+import { ROUTES } from "./constants";
 
 export function AppRoutes() {
   return (

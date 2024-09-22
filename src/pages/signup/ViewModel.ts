@@ -1,12 +1,11 @@
 import React from "react";
-import { loginUser, signupUser } from "@/app/services/userService";
+import { loginUser, signupUser } from "../services/userService";
 // import useAlert from "@/components/molecules/alert/AlertComponent";
 // import { useRouter } from "next/navigation";
 import i18n from "@/i18n/i18n-es.json";
 import routes from "@/routes/routes";
 // import { setLogin } from "@/utils/utils";
 import { ErrorList, UserBase } from "@/lib/definitions";
-require("../../firebase");
 
 const ViewModel = () => {
   // const { AlertComponent, openSnackbar } = useAlert();

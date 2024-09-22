@@ -1,6 +1,6 @@
 import { ErrorList, SignUpDataDto, UserBase, UserDto } from "@/lib/definitions";
 import { api } from "./interceptors";
-import { buildAuthHeader } from "@/app/hooks/basicParams";
+import { buildAuthHeader } from "../hooks/basicParams";
 
 const API_AIR_URL = process.env.NEXT_PUBLIC_API_APP;
 
