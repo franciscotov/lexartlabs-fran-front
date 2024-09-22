@@ -8,6 +8,7 @@ const routes = {
   createCampus: "/backoffice/create-campus",
   signUpForAList: "/signUpForAList",
   signup: "/signup",
+  products: "/products",
 };
 
 export default routes;

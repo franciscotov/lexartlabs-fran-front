@@ -8,12 +8,10 @@ export interface UserBase {
   google: boolean;
 }
 
-
 export interface PaginateDTO<T> {
   count: number;
   rows: T[];
 }
-
 
 export enum Day {
   Lunes = "1",
@@ -25,7 +23,6 @@ export enum Day {
   Domingo = "7",
 }
 
-
 export enum ApiType {
   GET = "GET",
   POST = "POST",
@@ -36,7 +33,7 @@ export enum ApiType {
 export interface UserDto {
   username: string;
   password: string;
-  role: string;
+  role?: string;
 }
 
 export interface SignUpDataDto {
@@ -55,4 +52,13 @@ export interface Validations {
 
 export interface ErrorList {
   errors: string[];
+}
+
+export interface TokenData {
+  data: string;
+}
+
+export enum UserRole {
+  ADMIN = "ADMIN",
+  USER = "USER",
 }

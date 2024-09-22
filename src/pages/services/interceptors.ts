@@ -1,5 +1,7 @@
-// import { validateSession } from "@/utils/utils";
+import routes from "../../routes/routes";
+import { UserRole } from "../../lib/definitions";
 import axios from "axios";
+import { jwtDecode } from "jwt-decode";
 
 export const api = axios.create();
 // Request interceptor
@@ -25,11 +27,42 @@ api.interceptors.response.use(
         error.response.data.key === "JWT_EXPIRED")
     ) {
       // clearLocalStorage();
-      console.log("error", window.location.href );
-      if(window.location.href !== "/signup") {
+      console.log("error", window.location.href);
+      if (window.location.href !== "/signup") {
         // window.location.href = "/login";
       }
     }
     return { error, data: "error" };
   }
 );
+
+/**
+ * isAdmin, check if the user is an admin
+ */
+
+export const isAdmin = (token: string) => {
+  let decoded: any = jwtDecode(token);
+  console.log({ decoded });
+  return decoded === UserRole.ADMIN;
+};
+
+/**
+ * isAdmin, check if the user is an admin
+ */
+
+export const isValidToken = (token: string) => {
+  try {
+    let decoded: any = jwtDecode(token);
+    let now = new Date().getTime() / 1000;
+    const path = window.location.pathname;
+    if (now > decoded.exp) {
+      localStorage.clear();
+      if (path !== routes.signup) window.location.href = routes.login;
+      return;
+    }
+  } catch {
+    const path = window.location.pathname;
+    if (path !== routes.signup) window.location.href = routes.login;
+    return;
+  }
+};

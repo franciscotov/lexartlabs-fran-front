@@ -3,7 +3,6 @@
     "emailHelperText": "Usuario o correo electrónico es requerido",
     "errorTitle": "Error",
     "errorMsgLogin": "Error al intentar acceder",
-    "msgSuccessLogin": "Te redireccionaremos al dashboard",
     "titleSuccessLogin": "Redireccionando",
     "titleSuccess": "Exito",
     "send": "Enviar",
@@ -71,9 +70,12 @@
     "columnsEndHour": "Hora de fin",
     "columnsPlayersQuantity": "Jugadores",
     "columnsAdress": "Dirección",
-
+    
     "createUser": "Create user",
     "username": "Username",
     "passwordLabel": "Password",
-    "passwordHelperText": "Password is required"
+    "passwordHelperText": "Password is required",
+    "msgSuccessLogin": "Login success, redirecting",
+    "msgSuccessSingUp": "User created, redirecting",
+    "ErrorBadCredentials": "Bad credentials, please check your username and password"
 }
