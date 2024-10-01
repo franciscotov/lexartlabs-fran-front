@@ -3,7 +3,7 @@ import useAlert from "../../components/alert/AlertComponent";
 import i18n from "../../i18n/i18n-es.json";
 import routes from "../../routes/routes";
 import { useNavigate } from "react-router-dom";
-import { TokenData } from "@/lib/definitions";
+import { TokenData, UserDto } from "@/lib/definitions";
 import { useDispatch } from "react-redux";
 import { FetchLoginUserSuccess, } from "@/redux/types/types";
 import { fetchLoginUserSuccess } from "../../redux/actions/dataActions";
@@ -16,8 +16,8 @@ const ViewModel = () => {
   const { AlertComponent, openSnackbar } = useAlert();
   const dispatch: AppDispatch = useDispatch();
   const navigate = useNavigate();
-  const signin = async (data: any) => {
-    const res: TokenData | any = await loginUser(data.username, data.password);
+  const signin = async (data: UserDto) => {
+    const res: TokenData | any = await loginUser(data);
     if (res?.status === 200) {
       openSnackbar(i18n.titleSuccessLogin, i18n.msgSuccessLogin, "success");
       dispatch(fetchLoginUserSuccess(res.data));
@@ -28,7 +28,7 @@ const ViewModel = () => {
 
   const redirectUser = () => {
     setTimeout(() => {
-      navigate(routes.products);
+      navigate(routes.product);
     }, 500);
   };
 

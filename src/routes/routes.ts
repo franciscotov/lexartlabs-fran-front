@@ -9,6 +9,7 @@ const routes = {
   signUpForAList: "/signUpForAList",
   signup: "/signup",
   products: "/products",
+  product: "/product",
 };
 
 export default routes;

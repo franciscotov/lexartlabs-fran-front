@@ -1,3 +1,4 @@
+import store from "../../redux/store";
 import { AxiosRequestConfig } from "axios";
 
 export const buildHeader = (): AxiosRequestConfig<Headers> => {
@@ -11,10 +12,13 @@ export const buildHeader = (): AxiosRequestConfig<Headers> => {
 };
 
 export const buildAuthHeader = (): AxiosRequestConfig<Headers> => {
+  console.log(store.getState().data, 'store.getState()')
   const headers: AxiosRequestConfig<Headers> = {
     headers: {
-      Accept: "application/json",
+      // Accept: "application/json",
       "Content-Type": "application/json",
+      // get token from redux store
+      'Authorization': `Bearer ${store.getState().data.data.token}`,
     },
   };
   return headers;

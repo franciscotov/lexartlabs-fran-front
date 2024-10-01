@@ -1,16 +1,7 @@
-"use client";
 import { useFormik } from "formik";
 import { Button, Grid, TextField } from "@mui/material";
-
-type ValidationErrorType = {
-  username?: string;
-  password?: string;
-};
-
-const initialFormValues = {
-  username: "",
-  password: "",
-};
+import { UserDto } from "@/lib/definitions";
+import { initialFormValues } from "../../lib/inital";
 
 interface BasicUserFormProps {
   submitHandler: (values: typeof initialFormValues) => void;
@@ -26,7 +17,7 @@ const BasicUserForm = ({
   redirectTo,
 }: BasicUserFormProps) => {
   const validate = (values: typeof initialFormValues) => {
-    const errors: ValidationErrorType = {};
+    const errors = {} as UserDto;
 
     const { username, password } = values;
     if (!username) errors.username = "Username is required.";

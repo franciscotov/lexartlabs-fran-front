@@ -62,3 +62,14 @@ export enum UserRole {
   ADMIN = "ADMIN",
   USER = "USER",
 }
+
+export interface ProductVariantDto {
+  price: string;
+  color: string;
+}
+export interface ProductDto {
+  name: string;
+  brand: string;
+  model: string;
+  data?: ProductVariantDto[];
+}

@@ -1,5 +1,5 @@
 import { dataTypes } from "../../ActionTypes/dataTypes";
-import { DataActions, DataState, UserData } from "../../types/types";
+import { DataActions, DataState, UserData } from "@/redux/types/types";
 
 const initialState: DataState = {
   pending: false,
