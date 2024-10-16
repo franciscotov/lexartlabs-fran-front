@@ -1,8 +1,9 @@
 import { ProductDto } from "@/lib/definitions";
 import useAlert from "../../../components/alert/AlertComponent";
-import { create } from "../../../pages/services/productService";
+// import { create } from "../../../pages/services/productService";
 import { useSelector } from "react-redux";
 import { DataState } from "@/redux/types/types";
+import { create } from "../../../pages/services/productService";
 
 const ViewModel = () => {
   const { AlertComponent, openSnackbar } = useAlert();
