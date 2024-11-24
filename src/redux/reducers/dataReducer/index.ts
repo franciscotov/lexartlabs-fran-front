@@ -10,7 +10,6 @@ const initialState: DataState = {
 const dataReducer = (state = initialState, action: DataActions) => {
   switch (action.type) {
     case dataTypes.FETCH_LOGIN_USER_SUCCESS:
-      console.log(action.type,'dataReducer', action.payload );
       return {
         ...state,
         pending: false,

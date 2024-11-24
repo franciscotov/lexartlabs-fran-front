@@ -1,8 +1,9 @@
 import { productTypes } from "../ActionTypes/productTypes";
 import { dataTypes } from "../ActionTypes/dataTypes";
+import { ProductDto } from "@/lib/definitions";
 
 export interface FetchProductFeilurePayload {
-  type: productTypes.FETCH_PRODUCT_FAILURE;
+  type: productTypes.FETCH_CREATE_PRODUCT_FAILURE;
 }
 
 export interface FetchProductRequest {
@@ -10,17 +11,22 @@ export interface FetchProductRequest {
 }
 
 export interface FetchProductSuccessPayload {
-  type: productTypes.FETCH_PRODUCT_SUCCESS;
+  type: productTypes.FETCH_CREATE_PRODUCT_SUCCESS;
 }
 
 export interface FetchProductSuccess {
-  type: productTypes.FETCH_PRODUCT_SUCCESS;
-  payload: FetchProductSuccessPayload;
+  type: productTypes.FETCH_CREATE_PRODUCT_SUCCESS;
+  payload: boolean;
+}
+
+export interface FetchCreateProduct {
+  type: productTypes.FETCH_CREATE_PRODUCT;
+  payload: ProductDto;
 }
 
 export interface FetchProductFailure {
-  type: productTypes.FETCH_PRODUCT_FAILURE;
-  payload: FetchProductFeilurePayload;
+  type: productTypes.FETCH_CREATE_PRODUCT_FAILURE;
+  payload: boolean;
 }
 
 export interface FetchLoginUserSuccess {
@@ -40,7 +46,8 @@ export interface FetchLoginUserRequest {
 export type ProductActions =
   | FetchProductRequest
   | FetchProductSuccess
-  | FetchProductFailure;
+  | FetchProductFailure
+  | FetchCreateProduct;
 
 export type DataActions =
   | FetchLoginUserSuccess
@@ -51,6 +58,7 @@ export interface ProductState {
   pending: boolean;
   products: any[];
   error: any;
+  lastProductWasCreated: boolean;
 }
 
 export interface UserData {

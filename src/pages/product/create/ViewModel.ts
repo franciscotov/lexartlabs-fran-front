@@ -1,19 +1,16 @@
 import { ProductDto } from "@/lib/definitions";
 import useAlert from "../../../components/alert/AlertComponent";
-// import { create } from "../../../pages/services/productService";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCreateProduct } from "../../../redux/actions/productActions";
 import { DataState } from "@/redux/types/types";
-import { create } from "../../../pages/services/productService";
-
 const ViewModel = () => {
+  const dispatch = useDispatch();
   const { AlertComponent, openSnackbar } = useAlert();
   const createProduct = async (product: ProductDto) => {
-    const res: any = await create(product);
-    console.log(product, { res });
-    // openSnackbar("Product created successfully");
+    dispatch(fetchCreateProduct(product) as any);
   };
   const data = useSelector<DataState>((state) => state.data);
-console.log({data}, 'data')
+  console.log({data}, 'data')
   return {
     AlertComponent,
     createProduct,

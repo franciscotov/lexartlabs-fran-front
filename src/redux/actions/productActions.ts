@@ -1,10 +1,11 @@
+import { ProductDto } from "@/lib/definitions";
 import { productTypes } from "../ActionTypes/productTypes";
 import {
   FetchProductFailure,
   FetchProductRequest,
   FetchProductFeilurePayload,
-  FetchProductSuccessPayload,
   FetchProductSuccess,
+  FetchCreateProduct,
 } from "../types/types";
 
 export const fetchProductRequest = (): FetchProductRequest => ({
@@ -12,15 +13,22 @@ export const fetchProductRequest = (): FetchProductRequest => ({
 });
 
 export const fetchProductSuccess = (
-  data: FetchProductSuccessPayload
+  data: boolean
 ): FetchProductSuccess => ({
-  type: productTypes.FETCH_PRODUCT_SUCCESS,
+  type: productTypes.FETCH_CREATE_PRODUCT_SUCCESS,
   payload: data,
 });
 
 export const fetchProductFailure = (
-  data: FetchProductFeilurePayload
+  data: boolean
 ): FetchProductFailure => ({
-  type: productTypes.FETCH_PRODUCT_FAILURE,
+  type: productTypes.FETCH_CREATE_PRODUCT_FAILURE,
+  payload: data,
+});
+
+export const fetchCreateProduct = (
+  data: ProductDto
+): FetchCreateProduct => ({
+  type: productTypes.FETCH_CREATE_PRODUCT,
   payload: data,
 });
