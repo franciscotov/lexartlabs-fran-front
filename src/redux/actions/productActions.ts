@@ -3,7 +3,6 @@ import { productTypes } from "../ActionTypes/productTypes";
 import {
   FetchProductFailure,
   FetchProductRequest,
-  FetchProductFeilurePayload,
   FetchProductSuccess,
   FetchCreateProduct,
 } from "../types/types";

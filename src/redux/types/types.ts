@@ -72,3 +72,9 @@ export interface DataState {
   data: UserData;
   error: any;
 }
+
+// props for rootReducer
+export interface StateI {
+  products: ProductState;
+  data: DataState;
+}
