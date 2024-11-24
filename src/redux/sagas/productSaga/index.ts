@@ -20,7 +20,6 @@ function* fetchCreateProductSaga(
   action: FetchCreateProduct
 ): Generator<CallEffect | PutEffect, void, any> {
   try {
-    console.log({ action }, "action");
     yield create(action.payload);
     yield put(fetchProductSuccess(true));
   } catch (e: any) {

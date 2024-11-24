@@ -27,7 +27,6 @@ api.interceptors.response.use(
         error.response.data.key === "JWT_EXPIRED")
     ) {
       // clearLocalStorage();
-      console.log("error", window.location.href);
       if (window.location.href !== "/signup") {
         // window.location.href = "/login";
       }

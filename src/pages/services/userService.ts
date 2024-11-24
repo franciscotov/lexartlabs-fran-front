@@ -16,7 +16,6 @@ export const signupUser: ErrorList | any = async (
   const body: SignUpDataDto = { username, password, role: "ADMIN" };
   let options = buildHeader();
   try {
-    console.log({ API_AIR_URL }, "33333333333");
     let response = await api.post<ErrorList | any>(
       `${API_AIR_URL}auth/signup`,
       JSON.stringify(body),
@@ -38,7 +37,6 @@ export const loginUser: TokenData | any = async (data: UserDto) => {
       body,
       options
     );
-    console.log({ response });
     return response;
   } catch (e) {
     console.error(e, "errorsssss");

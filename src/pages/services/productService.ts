@@ -14,7 +14,6 @@ export const create: any = async (data: ProductDto) => {
       body,
       options
     );
-    console.log({ response });
     return response;
   } catch (e) {
     console.error(e, "errorsssss");

@@ -12,7 +12,6 @@ export const buildHeader = (): AxiosRequestConfig<Headers> => {
 };
 
 export const buildAuthHeader = (): AxiosRequestConfig<Headers> => {
-  console.log(store.getState().data, 'store.getState()')
   const headers: AxiosRequestConfig<Headers> = {
     headers: {
       // Accept: "application/json",
