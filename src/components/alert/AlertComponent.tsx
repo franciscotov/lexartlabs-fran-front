@@ -16,10 +16,6 @@ const useAlert = () => {
   const [message, setMessage] = useState("");
   const [severity, setSeverity] = useState<AlertColor>("error");
 
-  const handleClick = () => {
-    setOpen(true);
-  };
-
   const handleClose = (
     event?: React.SyntheticEvent | Event,
     reason?: string

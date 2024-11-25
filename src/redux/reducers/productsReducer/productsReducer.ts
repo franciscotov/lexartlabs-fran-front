@@ -1,4 +1,4 @@
-import { productTypes } from "../../ActionTypes/productTypes";
+import { productTypes } from "@/redux/ActionTypes/productTypes";
 import { ProductActions, ProductState } from "../../types/types";
 
 const initialState: ProductState = {
