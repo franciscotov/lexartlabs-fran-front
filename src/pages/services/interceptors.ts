@@ -1,5 +1,5 @@
-import routes from "../../routes/routes";
-import { UserRole } from "../../lib/definitions";
+import routes from "@/routes/routes";
+import { UserRole } from "@/lib/definitions";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 

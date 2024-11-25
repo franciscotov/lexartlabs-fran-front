@@ -1,4 +1,4 @@
-import { create as createProduct } from "../../../pages/services/productService";
+import { create as createProduct } from "@/pages/services/productService";
 import {
   put,
   CallEffect,
@@ -7,12 +7,12 @@ import {
 } from "redux-saga/effects";
 
 import { ProductDto } from "@/lib/definitions";
-import { productTypes } from "../../ActionTypes/productTypes";
+import { productTypes } from "@/redux/ActionTypes/productTypes";
 import {
   fetchProductFailure,
   fetchProductSuccess,
-} from "../../actions/productActions";
-import { FetchCreateProduct } from "../../../redux/types/types";
+} from "@/redux/actions/productActions";
+import { FetchCreateProduct } from "@/redux/types/types";
 
 const create = (data: ProductDto) => createProduct(data);
 

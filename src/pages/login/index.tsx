@@ -1,5 +1,6 @@
+import React from "react";
 import ViewModel from "./ViewModel";
-import BasicUserForm from "../../components/basicUserForm";
+import BasicUserForm from "@/components/basicUserForm";
 import { containerStyles } from "../signup/contants";
 
 const initialFormValues = {

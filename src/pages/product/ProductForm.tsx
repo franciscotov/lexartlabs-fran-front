@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import { Button, Grid, TextField } from "@mui/material";
 import { ProductDto } from "@/lib/definitions";
-import { initialValuesProductForm } from "../../lib/inital";
+import { initialValuesProductForm } from "@/lib/inital";
 
 interface BasicUserFormProps {
   submitHandler: (values: typeof initialValuesProductForm) => void;

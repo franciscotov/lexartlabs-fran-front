@@ -1,5 +1,5 @@
 import { productTypes } from "@/redux/ActionTypes/productTypes";
-import { ProductActions, ProductState } from "../../types/types";
+import { ProductActions, ProductState } from "@/redux/types/types";
 
 const initialState: ProductState = {
   pending: false,

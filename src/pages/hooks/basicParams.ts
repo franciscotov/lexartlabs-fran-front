@@ -1,4 +1,4 @@
-import store from "../../redux/store";
+import store from "@/redux/store";
 import { AxiosRequestConfig } from "axios";
 
 export const buildHeader = (): AxiosRequestConfig<Headers> => {

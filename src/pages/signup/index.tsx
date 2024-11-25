@@ -1,7 +1,7 @@
 import ViewModel from "./ViewModel";
 import { containerStyles } from "./contants";
-import BasicUserForm from "../../components/basicUserForm";
-import { initialFormValues } from "../../lib/inital";
+import BasicUserForm from "@/components/basicUserForm";
+import { initialFormValues } from "@/lib/inital";
 
 const SignUp = () => {
   const { signup: signupUser, AlertComponent, handleRedirect } = ViewModel();

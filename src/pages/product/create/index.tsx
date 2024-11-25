@@ -1,7 +1,7 @@
 import ProductForm from "../ProductForm";
-import { containerStyles } from "../../signup/contants";
+import { containerStyles } from "@/pages/signup/contants";
 import ViewModel from "./ViewModel";
-import { initialValuesProductForm } from "../../../lib/inital";
+import { initialValuesProductForm } from "@/lib/inital";
 
 const CreateProduct = () => {
   const { AlertComponent, createProduct } = ViewModel();

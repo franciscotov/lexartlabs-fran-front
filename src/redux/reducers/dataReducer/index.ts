@@ -1,4 +1,4 @@
-import { dataTypes } from "../../ActionTypes/dataTypes";
+import { dataTypes } from "@/redux/ActionTypes/dataTypes";
 import { DataActions, DataState, UserData } from "@/redux/types/types";
 
 const initialState: DataState = {

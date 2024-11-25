@@ -1,8 +1,8 @@
-import { loginUser } from "../../../pages/services/userService";
+import { loginUser } from "@/pages/services/userService";
 import { put, takeLatest, CallEffect, PutEffect } from "redux-saga/effects";
-import { fetchLoginUserSuccess, fetchLoginUserFailure } from "../../actions/dataActions";
+import { fetchLoginUserSuccess, fetchLoginUserFailure } from "@/redux/actions/dataActions";
 
-import { dataTypes } from "../../ActionTypes/dataTypes";
+import { dataTypes } from "@/redux/ActionTypes/dataTypes";
 
 const login = () => loginUser();
 

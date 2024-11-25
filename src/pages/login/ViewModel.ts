@@ -1,12 +1,12 @@
 import { loginUser } from "../services/userService";
-import useAlert from "../../components/alert/AlertComponent";
-import i18n from "../../i18n/i18n-es.json";
-import routes from "../../routes/routes";
+import useAlert from "@/components/alert/AlertComponent";
+import i18n from "@/i18n/i18n-es.json";
+import routes from "@/routes/routes";
 import { useNavigate } from "react-router-dom";
 import { TokenData, UserDto } from "@/lib/definitions";
 import { useDispatch } from "react-redux";
 import { FetchLoginUserSuccess, } from "@/redux/types/types";
-import { fetchLoginUserSuccess } from "../../redux/actions/dataActions";
+import { fetchLoginUserSuccess } from "@/redux/actions/dataActions";
 import { ThunkDispatch } from "@reduxjs/toolkit";
 import { RootState } from "@/redux/reducers/rootReducer";
 

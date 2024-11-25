@@ -1,7 +1,7 @@
 import { signupUser } from "../services/userService";
-import useAlert from "../../components/alert/AlertComponent";
-import i18n from "../../i18n/i18n-es.json";
-import routes from "../../routes/routes";
+import useAlert from "@/components/alert/AlertComponent";
+import i18n from "@/i18n/i18n-es.json";
+import routes from "@/routes/routes";
 import { useNavigate } from 'react-router-dom';
 import { ErrorList, UserBase } from "@/lib/definitions";
 

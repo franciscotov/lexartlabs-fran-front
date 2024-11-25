@@ -1,9 +1,9 @@
 import { ProductDto } from "@/lib/definitions";
-import useAlert from "../../../components/alert/AlertComponent";
+import useAlert from "@/components/alert/AlertComponent";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCreateProduct } from "../../../redux/actions/productActions";
+import { fetchCreateProduct } from "@/redux/actions/productActions";
 import { ProductState, StateI } from "@/redux/types/types";
-import i18n from "../../../i18n/i18n-es.json";
+import i18n from "@/i18n/i18n-es.json";
 import { useEffect } from "react";
 
 const ViewModel = () => {
