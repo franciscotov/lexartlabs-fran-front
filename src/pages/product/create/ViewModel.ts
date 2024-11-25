@@ -16,7 +16,7 @@ const ViewModel = () => {
   useEffect(() => {
     if (products.lastProductWasCreated && !products.error) {
       openSnackbar(i18n.titleCreateProductSuccess, i18n.msgCreateProductSuccess, "success");
-    } else {
+    } else if(products && products.error) {
       openSnackbar(i18n.titleCreateProductError, i18n.msgCreateProductError, "error");
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
