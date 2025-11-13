@@ -43,11 +43,28 @@ export interface FetchLoginUserRequest {
   type: dataTypes.FETCH_LOGIN_USER_REQUEST;
 }
 
+export interface FetchGetProductList {
+  type: productTypes.FETCH_GET_PRODUCT_LIST;
+}
+
+export interface GetProductListSuccess {
+  type: productTypes.GET_PRODUCT_LIST_SUCCESS;
+  payload: ProductDto[];
+}
+
+export interface GetProductListFailure {
+  type: productTypes.GET_PRODUCT_LIST_FAILURE;
+  payload: boolean;
+}
+
 export type ProductActions =
   | FetchProductRequest
   | FetchProductSuccess
   | FetchProductFailure
-  | FetchCreateProduct;
+  | FetchCreateProduct
+  | FetchGetProductList
+  | GetProductListSuccess
+  | GetProductListFailure;
 
 export type DataActions =
   | FetchLoginUserSuccess
@@ -56,7 +73,7 @@ export type DataActions =
 
 export interface ProductState {
   pending: boolean;
-  products: any[];
+  products: ProductDto[];
   error: any;
   lastProductWasCreated: boolean;
 }

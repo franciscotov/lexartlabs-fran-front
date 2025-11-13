@@ -20,3 +20,19 @@ export const create: any = async (data: ProductDto) => {
     return undefined;
   }
 };
+
+export const products: any = async () => {
+  let options = buildAuthHeader();
+  // improve the pagination later
+  // improve the type used for the response
+  try {
+    let response = await api.get<ProductDto[]>(
+      `${API_AIR_URL}products/products?page=0&size=10`,
+      options
+    );
+    return response;
+  } catch (e) {
+    console.error(e, "errorsssss");
+    return undefined;
+  }
+};

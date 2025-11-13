@@ -28,6 +28,24 @@ const productsReducer = (state = initialState, action: ProductActions) => {
         pending: false,
         lastProductWasCreated: action.payload,
       };
+    case productTypes.FETCH_GET_PRODUCT_LIST:
+      return {
+        ...state,
+        pending: true,
+      };
+    case productTypes.GET_PRODUCT_LIST_SUCCESS:
+      return {
+        ...state,
+        pending: false,
+        error: false,
+        products: action.payload,
+      };
+    case productTypes.GET_PRODUCT_LIST_FAILURE:
+      return {
+        ...state,
+        pending: false,
+        error: action.payload,
+      };
     default:
       return state;
   }
