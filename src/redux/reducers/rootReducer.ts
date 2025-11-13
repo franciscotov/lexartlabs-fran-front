@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import productsReducer from "./productsReducer/productsReducer";
 import dataReducer from "./dataReducer";
 
-const rootReducer = combineReducers({
+const rootReducer = combineReducers<any>({
   products: productsReducer,
   data: dataReducer,
 });

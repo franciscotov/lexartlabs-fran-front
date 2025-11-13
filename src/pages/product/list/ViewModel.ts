@@ -9,13 +9,17 @@ import { useEffect } from "react";
 const ViewModel = () => {
   const dispatch = useDispatch();
   const { AlertComponent, openSnackbar } = useAlert();
+  const products: ProductState = useSelector<StateI>(
+    (state) => state.products
+  ) as ProductState;
+  const data = useSelector<StateI>((state) => state.data);
+  console.log(data)
   const getProducts = async () => {
     dispatch<any>(fetchGetProductList());
   };
-  const products: ProductState = useSelector<StateI>((state) => state.products) as ProductState;
   useEffect(() => {
     getProducts();
-  });
+  }, []);
 
   return {
     AlertComponent,

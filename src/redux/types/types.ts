@@ -1,6 +1,7 @@
 import { productTypes } from "../ActionTypes/productTypes";
 import { dataTypes } from "../ActionTypes/dataTypes";
 import { ProductDto } from "@/lib/definitions";
+import { Status } from "@/constants";
 
 export interface FetchProductFeilurePayload {
   type: productTypes.FETCH_CREATE_PRODUCT_FAILURE;
@@ -26,7 +27,6 @@ export interface FetchCreateProduct {
 
 export interface FetchProductFailure {
   type: productTypes.FETCH_CREATE_PRODUCT_FAILURE;
-  payload: boolean;
 }
 
 export interface FetchLoginUserSuccess {
@@ -54,7 +54,6 @@ export interface GetProductListSuccess {
 
 export interface GetProductListFailure {
   type: productTypes.GET_PRODUCT_LIST_FAILURE;
-  payload: boolean;
 }
 
 export type ProductActions =
@@ -76,6 +75,7 @@ export interface ProductState {
   products: ProductDto[];
   error: any;
   lastProductWasCreated: boolean;
+  status: Status;
 }
 
 export interface UserData {

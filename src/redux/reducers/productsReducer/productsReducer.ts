@@ -1,3 +1,4 @@
+import { Status } from "@/constants";
 import { productTypes } from "@/redux/ActionTypes/productTypes";
 import { ProductActions, ProductState } from "@/redux/types/types";
 
@@ -6,6 +7,7 @@ const initialState: ProductState = {
   products: [],
   lastProductWasCreated: false,
   error: null,
+  status: Status.IDLE,
 };
 
 const productsReducer = (state = initialState, action: ProductActions) => {
@@ -13,38 +15,35 @@ const productsReducer = (state = initialState, action: ProductActions) => {
     case productTypes.FETCH_CREATE_PRODUCT_FAILURE:
       return {
         ...state,
-        pending: false,
-        error: action.payload,
         lastProductWasCreated: false,
+        status: Status.ERROR,
       };
     case productTypes.FETCH_PRODUCT_REQUEST:
       return {
         ...state,
-        pending: true,
+        status: Status.LOADING,
       };
     case productTypes.FETCH_CREATE_PRODUCT_SUCCESS:
       return {
         ...state,
-        pending: false,
         lastProductWasCreated: action.payload,
+        status: Status.SUCCESS,
       };
     case productTypes.FETCH_GET_PRODUCT_LIST:
       return {
         ...state,
-        pending: true,
+        status: Status.LOADING,
       };
     case productTypes.GET_PRODUCT_LIST_SUCCESS:
       return {
         ...state,
-        pending: false,
-        error: false,
         products: action.payload,
+        status: Status.SUCCESS,
       };
     case productTypes.GET_PRODUCT_LIST_FAILURE:
       return {
         ...state,
-        pending: false,
-        error: action.payload,
+        status: Status.ERROR,
       };
     default:
       return state;

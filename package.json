@@ -31,6 +31,7 @@
     "react-router-dom": "^6.26.2",
     "react-scripts": "5.0.1",
     "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
     "redux-saga": "^1.3.0",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
@@ -40,7 +41,8 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "craco eject",
-    "start:dev": "cross-env  NODE_ENV=deveploment env-cmd -f env/env.dev npm run start"
+    "start:dev": "cross-env  NODE_ENV=deveploment env-cmd -f env/env.dev npm run start",
+    "install:personal": "npm_config_userconfig=./.npmrc npm install"
   },
   "eslintConfig": {
     "extends": [

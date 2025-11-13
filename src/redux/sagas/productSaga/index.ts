@@ -27,7 +27,7 @@ function* fetchCreateProductSaga(
     yield create(action.payload);
     yield put(fetchProductSuccess(true));
   } catch (e: any) {
-    yield put(fetchProductFailure(true));
+    yield put(fetchProductFailure());
   }
 }
 

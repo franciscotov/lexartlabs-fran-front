@@ -19,9 +19,8 @@ export const fetchProductSuccess = (data: boolean): FetchProductSuccess => ({
   payload: data,
 });
 
-export const fetchProductFailure = (data: boolean): FetchProductFailure => ({
+export const fetchProductFailure = (): FetchProductFailure => ({
   type: productTypes.FETCH_CREATE_PRODUCT_FAILURE,
-  payload: data,
 });
 
 export const fetchCreateProduct = (data: ProductDto): FetchCreateProduct => ({
@@ -42,5 +41,4 @@ export const getProductListSuccess = (
 
 export const getProductListFailure = (): GetProductListFailure => ({
   type: productTypes.GET_PRODUCT_LIST_FAILURE,
-  payload: false,
 });

@@ -21,6 +21,7 @@ api.interceptors.response.use(
     return response;
   },
   function (error) {
+    console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', error)
     if (
       error.response &&
       (error.response.data.key === "INVALID_TOKEN" ||
